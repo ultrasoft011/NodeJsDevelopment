@@ -15,10 +15,22 @@
 const chalk = require('chalk')
 const read = require('./notes.js')
 
-console.log(chalk.green.bold('Yaz, I am learning Node.JS npm'));
+const command = process.argv[2]
 
-// const add = require('./utils.js')
-//
+console.log(process.argv)
+
+if (command === 'add') {
+    console.log('Adding note!')
+} else if (command === 'remove') {
+    console.log('Removing note!');
+}
+
+// console.log(chalk.red.bold('Yaz, I am learning Node.JS npm'));
+
+// console.log(process.argv[2])
+
+// // const add = require('./utils.js')
+// //
 // const sum = add(4, 2);
 //
 // console.log(sum)
