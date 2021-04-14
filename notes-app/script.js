@@ -5,14 +5,17 @@
 // 3. Exports getNotes function
 // 4. From app.js, load in and call the function printing message to console
 //
-const validator = require('validator')
+// Challange: Use the chalk library in your project
+//
+// 1. Install version 2.4.1 of chalk
+// 2. Load chalk into app.js
+// 3. Use it to print the string "Sucess!" to the console in green
+// 4. Test your work
+
+const chalk = require('chalk')
 const read = require('./notes.js')
 
-const message = read()
-
-console.log(message)
-
-console.log(validator.isURL('htt://mead.io'))
+console.log(chalk.green.bold('Yaz, I am learning Node.JS npm'));
 
 // const add = require('./utils.js')
 //
