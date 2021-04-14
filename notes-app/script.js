@@ -5,10 +5,14 @@
 // 3. Exports getNotes function
 // 4. From app.js, load in and call the function printing message to console
 //
+const validator = require('validator')
+const read = require('./notes.js')
 
-const message = require('./notes.js')
+const message = read()
 
-console.log(message());
+console.log(message)
+
+console.log(validator.isURL('htt://mead.io'))
 
 // const add = require('./utils.js')
 //
