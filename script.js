@@ -13,17 +13,48 @@
 // 4. Test your work
 
 const chalk = require('chalk')
+const yargs = require('yargs')
 const read = require('./notes.js')
 
-const command = process.argv[2]
+// const command = process.argv[2]
 
-console.log(process.argv)
+// console.log(process.argv)
 
-if (command === 'add') {
-    console.log('Adding note!')
-} else if (command === 'remove') {
-    console.log('Removing note!');
-}
+// Create add command
+
+yargs.command({
+    command: 'add',
+    describe: 'Add a new note',
+    handler: function () {
+        console.log('Adding a note')
+    }
+})
+
+// Create remove command
+
+yargs.command({
+    command: 'remove',
+    describe: 'Remove a note',
+    handler: function () {
+        console.log('Removing a note')
+    }
+})
+
+
+
+// Create add, remove, read and list commands
+
+
+console.log(yargs.argv)
+
+
+
+
+// if (command === 'add') {
+//     console.log('Adding note!')
+// } else if (command === 'remove') {
+//     console.log('Removing note!');
+// }
 
 // console.log(chalk.red.bold('Yaz, I am learning Node.JS npm'));
 
