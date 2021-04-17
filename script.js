@@ -40,6 +40,25 @@ yargs.command({
     }
 })
 
+// Create list command
+
+yargs.command({
+    command: 'list',
+    describe: 'List a note',
+    handler: function() {
+        console.log('Listing a note')
+    }
+})
+
+// Create read command
+
+yargs.command({
+    command: 'read',
+    describe: 'read a note',
+    handler: function() {
+        console.log('Reading a note')
+    }
+})
 
 
 // Create add, remove, read and list commands
