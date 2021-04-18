@@ -73,11 +73,10 @@ yargs.command({
     }
 })
 
-
 // Create add, remove, read and list commands
-
+//
 yargs.parse() 
-
+//
 // if (command === 'add') {
 //     console.log('Adding note!')
 // } else if (command === 'remove') {
