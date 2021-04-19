@@ -1,5 +1,6 @@
 const { default: chalk } = require('chalk')
 const fs = require('fs')
+const { title } = require('process')
 
 const getNotes = () =>  'Your notes...' 
 //
@@ -57,7 +58,19 @@ const loadNotes = () => {
     } catch (e) {
         return []
     }
+}
 
+// Function read note 
+const readNote = (title) => {
+    const notes = loadNotes()
+    const note = notes.find((note) => note.title === title)
+    
+    if (note) {
+        console.log(chalk.inverse(note.title))
+        console.log(note.body)
+    } else {
+        console.log(chalk.red.inverse('No note found'))
+    }
 }
 
 // Export the modules to script.js
@@ -65,5 +78,6 @@ module.exports = {
     getNotes: getNotes,
     addNote: addNote,
     removeNote: removeNote,
-    listNote: listNote
+    listNote: listNote,
+    readNote: readNote
 }

@@ -13,6 +13,7 @@
 // 4. Test your work
 
 const chalk = require('chalk')
+const { argv } = require('yargs')
 const yargs = require('yargs')
 const { removeNote } = require('./notes.js')
 const notes = require('./notes.js')
@@ -76,8 +77,13 @@ yargs.command({
 yargs.command({
     command: 'read',
     describe: 'read a note',
-    handler() {
-        console.log('Reading a note')
+    bluider: {
+        title: 'read command',
+        demandOption: true,
+        type: 'string'
+    },
+    handler(argv) {
+        notes.readNote(argv.title)
     }
 })
 
