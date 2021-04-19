@@ -20,7 +20,7 @@ const addNote = (title, body) => {
     }
 }
 
-// Function to removeNote
+// Function to remove a note
 const removeNote = (title) => {
     const notes = loadNotes()
     const noteKeeper = notes.filter((note) => note.title !== title)
@@ -32,6 +32,14 @@ const removeNote = (title) => {
     else {
         console.log(chalk.bgRed.bold('No note found'))
     }
+}
+
+// Function to list a note
+
+const listNote = () => {
+    const theNotes = loadNotes();
+    console.log(chalk.inverse('Listing the notes titles'))
+    theNotes.forEach(element => console.log(element.title))
 }
 
 // Function to save a note
@@ -56,5 +64,6 @@ const loadNotes = () => {
 module.exports = {
     getNotes: getNotes,
     addNote: addNote,
-    removeNote: removeNote
+    removeNote: removeNote,
+    listNote: listNote
 }
