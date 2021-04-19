@@ -1,7 +1,7 @@
 const { default: chalk } = require('chalk')
 const fs = require('fs')
 
-// const getNotes = () =>  'Your notes...' 
+const getNotes = () =>  'Your notes...' 
 //
 // Fcuntion to add a note
 const addNote = (title, body) => {
@@ -25,7 +25,7 @@ const removeNote = (title) => {
     const notes = loadNotes()
     const noteKeeper = notes.filter((note) => note.title !== title)
 
-    if (notes.length > noteKeeper) {
+    if (notes.length > noteKeeper.length) {
         console.log(chalk.bgGreen.bold('A note was removed'))
         saveNotes(noteKeeper)
     }
@@ -54,7 +54,7 @@ const loadNotes = () => {
 
 // Export the modules to script.js
 module.exports = {
-    // getNotes: getNotes,
+    getNotes: getNotes,
     addNote: addNote,
     removeNote: removeNote
 }
